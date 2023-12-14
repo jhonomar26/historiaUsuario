@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario ICFES</title>
+  <!-- Enlaces a los archivos CSS de Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/styleForm.css">
+
+  <script src="./main.js" defer></script>
+
+</head>
+<body>
+  <div class="container mt-5 ">
+    <div class="text-center">
+      <h2><b>Planeación de simulacros</b></h2>
+    </div>
+    
+    <!-- Formulario de inicio de sesión -->
+    <form id="loginForm">
+      <h4>Iniciar Sesión</h4>
+      <div class="form-group">
+        <label for="usuario">Usuario:</label>
+        <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+      </div>
+      <div class="form-group">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+      </div>
+      <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    </form>
+    
+    <hr>
+    
+    <!-- Formulario para ingresar datos del ICFES -->
+    <div class="caja">
+      <form id="icfesForm" class="was-validated" style="display: none;">
+        <h4>Bienvenido, <span id="usuarioActivo"></span></h4>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
+        </div>
+        <h1></h1>
+        <div class="container">
+          <div class="row">
+          <div class="col-5 ">
+              <h5><b>Puntajes obtenidos en la prueba</b></h5>
+              <div class="form-group" >
+                <label class="form-label" for="LecturaCritica">Lectura Crítica:</label>
+                <input type="number"  min="0" max="100" class="form-control" id="txtLC" placeholder="0 - 100"
+                onchange="actualizarPuntaje();" required>
+                
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="Matematicas">Matematicas:</label>
+                <input type="number" min="0" max="100" class="form-control" id="txtMat" placeholder="0 - 100"
+                onchange="actualizarPuntaje();" required>
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="socialesyciudadanas">Sociales Y Ciudadanas:</label>
+                <input type="number" min="0" max="100" class="form-control" id="txtSyC" placeholder="0 - 100"
+                onchange="actualizarPuntaje();" required>
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cienciasnaturales">Ciencias Naturales:</label>
+                <input type="number" min="0" max="100" class="form-control" id="txtCN" placeholder="0 - 100"
+                onchange="actualizarPuntaje();" required>
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div> 
+
+              <div class="form-group">
+                <label class="form-label" for="inglés">Inglés:</label>
+                <input type="number" min="0" max="100" class="form-control" id="txtIng" placeholder="0 - 100"
+                onchange="actualizarPuntaje();" required>
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lstPeriodos">Periodo</label>
+                <!--Lista para seleccionar los periodos-->
+                <select class="form-select" id="lstPeriodos" onclick="darElemento();">
+                <option selected disabled value="">Seleccione el Periodo</option>
+                </select>
+              </div>
+
+              <div class="row border">
+                <div class="col-sm-6">
+                <label for="" id="lblInfo"></label>
+                </div>
+              </div>
+        
+
+          </div>
+         <div class="col-4 ">
+
+
+          <!-- <div class="col-sm-6">
+            <label class="form-label" for="lstPeriodos">Periodo</label>
+            <!--Lista para seleccionar los periodos-->
+            <!-- <select class="form-select" id="lstPeriodos" onclick="darElemento();">
+            <option selected disabled value="">Seleccione el Periodo</option>
+            </select> -->
+          <!-- </div> --> 
+    
+          
+
+
+
+
+         </div>
+          <div class="col-3 ">
+              <h5><b>Puntaje Global</b></h5> 
+              <div class="form-group">
+                <br> 
+                <p> </p>
+                <label  style="width: 150px; height:50px;" class="form-control" id="lblPuntaje" placeholder="100">
+                
+                <div class="valid-feedback"> Validación exitosa </div>
+                <div class="invalid-feedback"> Campo requerido </div>
+              </div>   
+          </div>
+          </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-secondary">Guardar</button>
+        <input type="submit" name="cerrar_sesion" id="cerrar_sesion" value="cerrar sesion" />
+      </div>
+      </form>
+    </div>
+    
+  </div>
+
+  <!-- Enlaces a los archivos JS de Bootstrap y script personalizado -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Script para gestionar la lógica de inicio de sesión y cambio de formularios
+    $(document).ready(function(){
+      $('#loginForm').submit(function(e){
+        e.preventDefault();
+        var usuario = $('#usuario').val();
+        // Aquí se puede agregar lógica para verificar el usuario y contraseña
+        // Por ahora, simplemente mostramos el segundo formulario si se ingresa algo en el campo usuario
+        //  style="width: 150px; height:20px;"
+
+      //  .sombra{
+     //     box-shadow: 2px 2px 2px black inset;
+     // }
+      
+        if(usuario !== ''){
+          $('#usuarioActivo').text(usuario);
+          $('#loginForm').hide();
+          $('#icfesForm').show();
+        }
+      });
+
+      $('#cerrarSesion').click(function(e){
+        e.preventDefault();
+        $('#usuario').val('');
+        $('#usuarioActivo').text('');
+        $('#loginForm').show();
+        $('#icfesForm').hide();
+      });
+    });
+  </script>
+</body>
+</html

@@ -1,0 +1,28 @@
+.d-flex {
+  height: 40px; /* Ajuste la altura según sea necesario */
+  width: 60%; /* Ajuste el ancho según sea necesario */
+}
+
+.row {
+  width: 100%;
+}
+
+.row > div {
+  width: 1200px;
+  height: 120px;
+  
+}
+
+
+
+.agreUsuario {
+  
+  background-color: rgb(52, 52, 56); /* Fondo negro */
+  text-align: center; /* Contenido centrado */
+  color: white; /* Texto blanco para mayor visibilidad en el fondo negro */
+  padding: 10px; /* Añadir un poco de espacio interno para mayor legibilidad */
+  /* margin: 2px 0px 0px 0px; */
+}
+.text-decoration-none:hover {
+  color: #ff0000; /* Cambiar a tu color deseado */
+}

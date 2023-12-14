@@ -1,0 +1,26 @@
+body{
+    font-family: Verdana, Tahoma, sans-serif;
+    background-image: linear-gradient(to right, rgba(20, 127, 220, 0.5), rgb(144, 85, 125));
+    }
+    .caja{
+    background-color: rgba(172, 163, 163, 0.315);
+    padding: 15px;
+    border-radius: 15px;  
+}
+
+
+fieldset{
+    border: 3px solid rgba(154, 30, 255, 0.911);
+}
+legend{
+    border: 1px solid rgba(238, 224, 237, 0.384);
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(245, 248, 248, 0.788);
+    border-radius: 8px;
+   
+}
+.inputBox{
+    position: relative;
+
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Actividades</title>
+  <!-- Enlaces a los archivos CSS de Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styleForm.css">
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="text-center">
+      <h2><b>Planeación de actividades</b></h2>
+    </div>
+    
+    <hr>
+    
+    <!-- Formulario para ingresar datos del ICFES -->
+    <div class="caja">
+      <form id="icfesForm" class="was-validated">
+        <h4>Bienvenido, <span id="usuarioActivo"></span></h4>
+        <!-- Resto del formulario... -->
+        <div class="form-group ">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control form-control2" id="nombre" placeholder="Ingrese su nombre">
+          </div>
+          <div class="form-group ">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control form-control2" id="apellido" placeholder="Ingrese su apellido">
+          </div>
+          <h1></h1>
+          <div class="container  containerdetalles">
+            <div class="row">
+            <div class="col-5 ">
+                <h5><b>Detalles de la nueva actividad</b></h5>
+                <div class="form-group" >
+                  <label class="form-label" for="titulo">Titulo de la actividad:</label>
+                  <input type="string"  class="form-control" id="txtLC" placeholder="Ingrese aquí el titulo..."
+                  onchange="actualizarPuntaje();" required>
+                  
+                  <div class="valid-feedback"> Validación exitosa </div>
+                  <div class="invalid-feedback"> Campo requerido </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="Matematicas">Asignada por:</label>
+                  <input type="string" class="form-control" id="txtMat" placeholder="Nombre del docente"
+                  onchange="actualizarPuntaje();" required>
+                  <div class="valid-feedback"> Validación exitosa </div>
+                  <div class="invalid-feedback"> Campo requerido </div>
+                </div>
+  
+                <div class="form-group">
+                  <label class="form-label" for="socialesyciudadanas">Descripción:</label>
+                  <input type="string" class="form-control" id="txtSyC" placeholder="Descripcion de la actividad..."
+                  onchange="actualizarPuntaje();" required>
+                  <div class="valid-feedback"> Validación exitosa </div>
+                  <div class="invalid-feedback"> Campo requerido </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-secondary" id="btnGuardar">Guardar</button>
+
+                    <a href="../competencias/matematicas.html" class="btn-secondary2" >
+                      <i class="fas fa-plus fa-3x text-left"></i>
+                      <p class="" >Volver</p>
+                    </a>
+                  
+
+                    <!-- <input type="submit" name="cerrar_sesion" id="cerrar_sesion" value="cerrar sesion" /> -->
+                </div>
+  
+                
+  
+                <div class="row border">
+                  <div class="col-sm-6">
+                  <label for="" id="lblInfo"></label>
+                  </div>
+                </div>
+            </div>
+
+        
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Contenedor de tarjetas en la plantilla de visualización de actividades -->
+<div id="tarjetaContenedor" class="card-deck">
+  <!-- Las tarjetas se agregarán aquí -->
+</div>
+
+
+  <!-- Script en main.js -->
+<script src="./main.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const btnGuardar = document.getElementById('btnGuardar');
+    const tarjetaContenedor = document.getElementById('tarjetaContenedor');
+
+    btnGuardar.addEventListener('click', function (event) {
+        event.preventDefault(); // Previene la recarga de la página al enviar el formulario
+
+        // Obtén valores del formulario
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const titulo = document.getElementById('txtLC').value;
+        const asignadaPor = document.getElementById('txtMat').value;
+        const descripcion = document.getElementById('txtSyC').value;
+
+        // Crea la estructura de la tarjeta
+        const nuevaTarjeta = document.createElement('div');
+        nuevaTarjeta.className = 'card';
+
+        nuevaTarjeta.innerHTML = `
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="../images/examen.avif" class="card-img-top" style="width:65px;height:80px; " />
+    
+                    <h5 class="card-title">Título: ${titulo}</h5>
+                    <p class="card-text">Asignado por: ${asignadaPor} </p>
+                    <p class="card-text">Descripcion: ${descripcion}</p>
+                    <button class="btn btn-danger btnEliminar">Eliminar</button>
+                    
+                </div>
+            </div>
+
+          
+        `;
+
+        // Agrega la tarjeta al contenedor
+        tarjetaContenedor.appendChild(nuevaTarjeta);
+
+        // Limpia el formulario
+        document.getElementById('icfesForm').reset();
+
+        // Agrega el controlador de eventos para el botón de eliminar
+        const btnEliminar = nuevaTarjeta.querySelector('.btnEliminar');
+        btnEliminar.addEventListener('click', function () {
+            tarjetaContenedor.removeChild(nuevaTarjeta);
+        });
+    });
+});
+
+</script>
+
+
+</body>
+</html>

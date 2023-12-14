@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Otros elementos en el encabezado... -->
+    <link rel="stylesheet" href="../styles/stylesCompetencias.css">
+    <title>Mi página web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+
+    <!-- Otros elementos en el encabezado... -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Mi página web</title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+
+
+</head>
+
+<body>
+
+    
+
+    <div  style="width:1800px;  " class="container agreUsuario text-white text-center p-4 mt-4">
+        
+        
+        <form  class="custom-form d-flex justify-content-between align-items-center" role="search">
+            <div class="d-flex align-items-center">
+                <input class="barra form-control me-2" type="search" placeholder="Buscar actividad" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </div>
+
+            <h3>Competencias Ciudadanas</h3>
+
+        
+            <a href="../index.html" class="text-decoration-none text-white ms-3">
+                <i class="fas fa-home fa-2x text-left"></i>
+                <p class="text-bg-white">Inicio</p>
+            </a>
+            
+        </form>
+        
+        
+
+        <div class="card-deck" >
+            <div class="card">
+            <div class="card-body">
+                <img src="../images/examen.avif" class="card-img-top" style="width:65px;height:80px; " />
+
+                <h5 class="card-title">Taller Sofware-1</h5>
+                <p class="card-text">Asignado por: Geovani Hernandez </p>
+                <p class="card-text">Descripcion: con este taller se busca fortalecer area de raxonamiento cuantitativo</p>
+                <a href="{% url 'trainer-detail' c.pk %}" class="btn btn-primary">Ver detalles</a>
+            </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="../images/examen.avif" class="card-img-top" style="width:65px;height:80px; " />
+    
+                    <h5 class="card-title">Laboratorio Procedimientos</h5>
+                    <p class="card-text">Asignado por: Geovani Hernandez </p>
+                    <p class="card-text">Descripcion: Se busca que los estidiantes planteen metodos </p>
+                    <a href="{% url 'trainer-detail' c.pk %}" class="btn btn-primary">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="../images/examen.avif" class="card-img-top" style="width:65px;height:80px; " />
+    
+                    <h5 class="card-title">Prueba Escrita</h5>
+                    <p class="card-text">Asignado por: Geovani Hernandez </p>
+                    <p class="card-text">Descripcion: Medir el conocimiento y comprension de la tematica</p>
+                    <a href="{% url 'trainer-detail' c.pk %}" class="btn btn-primary">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+         
+         
+      
+        <a href="../formulariosCompetencias/socialesForm.html" class="text-decoration-none" style="color: white;">
+            <i class="fas fa-plus fa-3x text-left "></i>
+
+            <p class="text-bg-white">Añadir</p>
+        </a>
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-q4a8H3t1z8v5Yi5mjpLd6fa7cS7wskwAQ/D7S5kFD5F5trVd7pXQQCdsIjjOJdVj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

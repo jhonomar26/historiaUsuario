@@ -1,0 +1,96 @@
+.d-flex {
+    height: 40px; /* Ajuste la altura según sea necesario */
+    width: 60%; /* Ajuste el ancho según sea necesario */
+}
+
+.row {
+width: 100%;
+}
+
+.row > div {
+width: 1200px;
+height: 120px;
+
+}
+
+
+.custom-form{
+    max-width:1100px; 
+    width: 1100px;
+}
+
+.barra {
+    max-width:400px; 
+    width: 400px;
+}
+
+.agreUsuario {
+
+background-color: rgb(52, 52, 56); /* Fondo negro */
+text-align: center; /* Contenido centrado */
+color: white; /* Texto blanco para mayor visibilidad en el fondo negro */
+padding: 10px; /* Añadir un poco de espacio interno para mayor legibilidad */
+/* margin: 2px 0px 0px 0px; */
+}
+.text-decoration-none:hover {
+color: #ff0000; /* Cambiar a tu color deseado */
+}
+
+
+.card:hover {
+transform: scale(1.1);
+transition: all 0.3s ease;
+
+}
+.card-img-top {
+margin: 10px;
+}
+
+.card-body {
+margin-bottom: 15px;
+}
+
+.card {
+    max-width: 280px;
+    max-height: 330px;
+    width: 200px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    
+    border: 2px solid #085E81;
+    border-style: solid;
+}
+
+.btn {
+    background-color: #085E81;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.btn:active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* estilo para las tarjetas pading entre la barra busqueda y cards */
+.card-deck  {
+    padding-top: 30px;
+}
+
+
+h3 {
+    padding-right: 40px ;
+    font-style: italic; /* Aplica el estilo cursiva */
+    font-family: 'TuTipoDeLetra', sans-serif; /* Reemplaza 'TuTipoDeLetra' con el nombre de la fuente deseada */
+    /* Otros estilos según tus preferencias, como color, tamaño, etc. */
+    font-size: 10px; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+  }
+    
